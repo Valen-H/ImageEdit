@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Image Editor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="V.H." />
+		<meta name="description" content="An image editor tool." />
+		<meta name="keywords" content="image, canvas, editor, filters" />
+		<meta property="og:image" content="favicon.ico" />
+		<link rel="icon" href="favicon.ico"/>
+		<link rel="stylesheet" href="main.css" />
+		<link rel="manifest" href="manifest.json" />
+		<script src="index.js" defer></script>
+	</head>
+	<body>
+		<main id="body">
+			<label for="file">Image</label>
+			<input type="file" id="file" name="file" accept="image/*" />
+			<div class="container">
+				<canvas id="canv"></canvas>
+			</div>
+			<select id="presets" name="presets">
+				<option value="custom" selected>Custom</option>
+				<optgroup label="Basic">
+					<option value="gray">Grayscale</option>
+					<option value="bright">Brightness</option>
+					<option value="invert">Invert</option>
+					<option value="trans">Transparency</option>
+				</optgroup>
+				<optgroup label="Color">
+					<option value="hue">Hue</option>
+					<option value="nored">Remove Red</option>
+					<option value="nogreen">Remove Green</option>
+					<option value="noblue">Remove Blue</option>
+				</optgroup>
+				<optgroup label="Utils">
+					
+				</optgroup>
+			</select>
+			<textarea id="code" name="code" autocomplete="off" autofocus></textarea>
+			<button id="run" onclick="process()">Run</button>
+			<button id="undo" onclick="undo()">Undo</button>
+		</main>
+	</body>
+</html>

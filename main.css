@@ -1,0 +1,66 @@
+:root {
+	--default-margin: 5px;
+	--default-padding: 5px;
+	--default-radius: 5px;
+}
+
+* {
+	box-sizing: border-box;
+	user-select: contain;
+}
+
+body, #body {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: var(--default-padding);
+	overflow: auto;
+	background: radial-gradient(circle farthest-side at center, white 10%, lightgray 50%, gray 100%);
+	display: flex;
+	flex-flow: row wrap;
+	align-content: center;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+}
+
+input, select, button, canvas {
+	border-radius: var(--default-radius);
+	cursor: pointer;
+	transition: all 200ms;
+}
+:where(input, select, button):hover {
+	filter: brightness(70%);
+}
+:where(input, select, button):active {
+	filter: brightness(50%);
+}
+textarea {
+	min-height: 50vmin;
+	min-width: 50vmin;
+}
+label::after {
+	content: ":";
+}
+
+.container {
+	overflow: auto;
+	max-width: 70vmin;
+	max-height: 70vmin;
+	aspect-ratio: 1 / 1;
+	padding: 0;
+	resize: both;
+}
+
+#canv {
+	border: 1px solid black;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
